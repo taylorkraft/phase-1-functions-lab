@@ -10,8 +10,12 @@ const distanceFromHqInFeet = function(block) {
   return distanceFromHqInBlocks(block) * 264
 }
 
-function distanceTraveledInFeet(startPoint, endPoint) {
-  //returns the value of feet traveled
+const distanceTravelledInFeet = function(startPoint, destination) {
+  if (startPoint < destination) {
+    return (destination - startPoint) * 264
+  } else {
+    return (startPoint - destination) * 264
+  }
 }
 
 function calculatesFarePrice(startPoint, endPoint) {
